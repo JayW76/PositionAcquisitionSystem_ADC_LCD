@@ -65,6 +65,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc_ptr)
 {
     ADC_Mailbox = HAL_ADC_GetValue(&hadc);
     ADC_Flag = 1; 
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 }
 
 void SystemClock_Config(void)
@@ -158,3 +159,4 @@ void assert_failed(uint8_t *file, uint32_t line)
 {
 }
 #endif
+
